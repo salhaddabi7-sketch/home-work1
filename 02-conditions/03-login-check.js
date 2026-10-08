@@ -17,4 +17,11 @@ const correctPassword = "oman2026";
 const username = "salim";
 const password = "muscat";
 
+if (username !== correctUsername) {
+    console.log("User not found");
+} else if (password !== correctPassword) {
+    console.log("Wrong password");
+} else {
+    console.log("Welcome, salim!");
+}
 // your code here

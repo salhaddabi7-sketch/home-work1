@@ -26,4 +26,39 @@ const books = [
   { title: "The Prophet", author: "Kahlil Gibran", year: 1923, available: true },
 ];
 
+let availableBooks = 0;
+let before2000 = 0;
+let newestBook = books[0];
+
+for (let i = 0; i < books.length; i++) {
+    let book = books[i];
+
+    // 1. Print every book
+    let status;
+
+    if (book.available) {
+        status = "available";
+        availableBooks++;
+    } else {
+        status = "checked out";
+    }
+
+    console.log(`${book.title} by ${book.author} (${book.year}) — ${status}`);
+
+    // 3. Count books before 2000
+    if (book.year < 2000) {
+        before2000++;
+    }
+
+    // 4. Find newest book
+    if (book.year > newestBook.year) {
+        newestBook = book;
+    }
+}
+
+// 2, 3 and 4. Print results
+console.log(`Available books: ${availableBooks}`);
+console.log(`Published before 2000: ${before2000}`);
+console.log(`Newest book: ${newestBook.title} (${newestBook.year})`);
+
 // your code here
